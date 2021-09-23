@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> 
+
+    <title>Student List</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Content here -->
+      <h1>Student List</h1>
+
+      <div class="input-group mb-3">        
+        <input id="filterInput" type="text" class="form-control" placeholder="Search names...">
+      </div>      
+
+      <ul id="names" class="list-group">
+        
+        <li class="list-group-item list-header">
+          <h3>A</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Arielle</a>
+        </li>        
+
+        <li class="list-group-item list-header">
+          <h3>B</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Bella</a>
+        </li>        
+
+        <!-- insert the rest of the list here -->
+
+                
+      </ul>
+              
+    </div>
+   
+    <script>
+      
+      // algorithm as pseudocode:
+
+      // get a reference to the input element
+      // insert code here
+
+      // add event listener to detect when we press a key
+      // insert code here      
+
+      // create a function that does the work of filtering the names in our document 
+      // and updating the list to show the name we are looking for  
+      function filterNames() {
+        //console.log(1); // test to make sure function is called
+
+        // Get value of input and make it uppercase
+        // insert code here        
+
+        // Get names ul
+        // insert code here        
+
+        // get li's from ul
+        // ref: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+        // insert code here        
+
+        // filter the list by performing a text comparrison
+        // then update the display to show matches
+
+        // loop through list-item list
+        for(var i = 0; i < li.length; i++){
+          
+          // get each item in the list to test
+          // insert code here         
+
+          // check if there is a match by comparing the filterValue from above to the current value in the list
+          
+          // insert code here for the comparrison 
+          if() {
+            
+            // if there is a match, do this
+            // insert code here 
+
+          } else {
+
+            // if there is not a match, do this
+            // insert code here 
+
+          }
+
+        }
+
+      }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+      
+      var filterInput = document.getElementById('searchField');
+      //console.log(filterInput);
+
+      // add event listener for key presses
+      filterInput.addEventListener('keyup', filterNames);
+
+      // define function
+      // what is a function?
+      // a block of code that does something
+      function filterNames() {
+        // inside the function
+
+        // get the value from the input
+        //console.log(filterInput.value)
+
+        // how to get the data in here??
+        // get the ul
+        var ul = document.getElementById('names');
+        //console.log(ul);
+
+        // get the names within the ul from list items
+        var li = ul.querySelectorAll('li.list-item');
+        console.log(li);
+
+        // Get value of input and make it uppercase
+        var filterValue = document.getElementById('searchField').value.toUpperCase();
+        //console.log(filterValue);
+        
+        // filter the list        
+        
+        // loop through the list
+        // perform a text comparrison
+        // update the display to show matches
+
+        // loop through list-item list
+        for(var i = 0; i < li.length; i++){
+          
+          // get each item in the list to test
+          var a = li[i].getElementsByTagName('a')[0]; 
+
+          // check if there is a match by comparing the filterValue from above to the current value in the list
+          if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            
+            // if there is a match, do this
+            li[i].style.display = '';
+          } else {
+            // if there is not a match, do this
+            li[i].style.display = 'none';
+          }
+
+        }
+
+
+
+      }

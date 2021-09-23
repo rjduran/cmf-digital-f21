@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>    
+    <title>Student List</title>
+
+    <style>
+      
+      /* parent to the .container */
+      /* new school way to center content on a page */
+      body {
+        display: flex;        
+        justify-content: center;
+      }
+      .container {
+        width: 50%;        
+        /* old school way to center content on a page */
+        /* margin: 0 auto; */                
+        border: 1px solid #bbbbbb;
+        padding: 10px;        
+        text-align: center;
+      }
+
+      .list-group {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .list-item a {
+        color: red;
+      }
+
+      #filterInput {
+        width: 50%;        
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Content here -->
+      <h1>Student List</h1>
+
+      <input id="filterInput" type="text" placeholder="Search names...">
+      
+      <ul id="names" class="list-group">
+        
+        <!-- A -->
+        <li class="list-group-item list-header">
+          <h3>A</h3>
+        </li>       
+        <li class="list-group-item list-item">
+          <a href="#">Alex</a>
+        </li>        
+        <li class="list-group-item list-item">
+          <a href="#">Aaron</a>
+        </li>        
+
+        <!-- B -->       
+
+        <!-- C -->
+        <li class="list-group-item list-header">
+          <h3>C</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Cameron</a>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Caroline</a>
+        </li>
+
+        <!-- D -->
+        <li class="list-group-item list-header">
+          <h3>D</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Danny</a>
+        </li>
+        
+        <!-- E -->       
+        <!-- F -->
+        <!-- G -->
+        <!-- H -->
+        <!-- I -->
+        
+        <!-- J -->
+        <li class="list-group-item list-header">
+          <h3>J</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">John</a>
+        </li>
+
+        <!-- K -->
+        <li class="list-group-item list-header">
+          <h3>K</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Kindsay</a>
+        </li>
+
+        <!-- L -->
+        <li class="list-group-item list-header">
+          <h3>L</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Lily</a>
+        </li>
+        
+        <!-- M -->
+        <li class="list-group-item list-header">
+          <h3>M</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Mickey</a>
+        </li>
+
+        <!-- N -->
+               
+        <!-- O -->
+        <li class="list-group-item list-header">
+          <h3>O</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Olivia</a>
+        </li>
+        
+        <!-- P -->
+        <!-- Q -->
+        <!-- R -->
+        <!-- S -->        
+        <li class="list-group-item list-header">
+          <h3>S</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Sarah</a>
+        </li>
+
+        <!-- T -->
+        <li class="list-group-item list-header">
+          <h3>T</h3>
+        </li>
+        <li class="list-group-item list-item">
+          <a href="#">Trent</a>
+        </li>
+        <!-- U -->
+        <!-- V -->
+        <!-- W -->
+        <!-- X -->       
+        <!-- Y -->
+        <!-- Z -->
+                
+      </ul>
+         
+    </div>
+   
+    <script>
+      
+      // get a reference to the input element
+      var filterInput = document.getElementById('filterInput');
+      //console.log(filterInput); //  to test that im getting reference to the input element      
+
+      // add event listener to detect when we press a key
+      filterInput.addEventListener('keyup', filterNames);
+
+      // create a function that does the work of filtering the names in our document 
+      // and updating the list to show the name we are looking for
+      function filterNames() {
+        //console.log(1); // test to make sure function is called
+
+        // Get value of input and make it uppercase
+        var filterValue = document.getElementById('filterInput').value.toUpperCase();
+        //console.log(filterValue); // test for key presses and converting chatacters to uppercase
+
+        // Get names ul
+        var ul = document.getElementById('names');
+        //console.log(names); // test to make sure we get the names ul
+
+        // get li's from ul
+        // ref: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+        var li = ul.querySelectorAll('li.list-item');
+        //console.log(li); // test to make sure we get a list of li's with class list-item
+
+        // loop through .list-item list
+        // loop over 18 items
+        for(var i = 0; i < li.length; i++){
+          
+          // get each item in the list to test
+          var a = li[i].getElementsByTagName('a')[0]; 
+
+          // Check if there is a match by comparing the filterValue from above to the current value in the list. 
+          // This uses the indexOf() function to do the compare. 
+          // ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+          // Basically, if there is anything in the current anchor tag that matches the filterValue, this will 
+          // evaluate to true and show the element. Else, it will hide the item in the list. 
+          if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            
+            // if there is a match, show element
+            li[i].style.display = '';
+
+          } else {
+            
+            // if there is not a match, hide element
+            li[i].style.display = 'none';
+
+          }
+
+        }
+
+      }
+
+    </script>
+  </body>
+</html>

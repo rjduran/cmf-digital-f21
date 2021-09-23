@@ -1,0 +1,16 @@
+/* element selector */
+h1 {
+  color: orange;
+}
+
+/* class selector */
+.title {
+  color: purple;
+}
+
+/* id selector */
+#space-cat {
+  border: solid;
+  border-width: 5px;
+  border-color: yellow;
+}

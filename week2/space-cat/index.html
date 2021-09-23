@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- this is where you load other files in a document (ie. css and js files)-->
+  
+  <!-- external css -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  
+  <!-- external script -->
+  <!-- <script src="script.js"></script> -->
+
+  <!-- internal css -->
+  <style>
+    /* this is a comment in css */
+
+    /* element selector */
+    h1 {
+      color: red;
+    }
+
+    /* class selector */
+    .title {
+      color: green;
+    }
+
+    /* id selector */
+    #space-cat {
+      border: solid;
+      border-width: 5px;
+      border-color: blue;
+    }
+    #wrapper {
+      width: 50%;
+      margin: auto;
+    }
+    
+  </style>
+
+  <!-- internal script -->
+  <script>
+    // display alert on page load ()
+    //alert("hello spacecat!");
+
+    // display in development console
+    console.log("hello spacecat!");
+    
+  </script>
+  
+</head>
+
+<body>
+  <!-- this is where you specify your document -->
+  <div id="wrapper">
+    <h1>this is a header</h1>
+    <p>this is a paragraph</p>
+    
+    <!-- this is a container -->
+    <div>
+      <h2 class="title">this is also a header</h2>
+      <p>this is another paragraph</p>
+      <a href="https://make.cmci.studio">This is a link to the class website</a>
+    </div>
+
+    <!-- this is a container -->
+    <div>
+      <h2 class="title">spacecat!</h2>
+      <p>yay spacecat!</p>
+      <img id="space-cat" src="spacecat.jpg" alt="spacecat">
+      <p id="greeting"></p>    
+    </div>
+
+    <!-- this is a footer -->
+    <footer>Made by cats</footer>
+  </div>
+
+  <!-- you may also place the script tag or load in js files after the body has been read-->    
+  <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
