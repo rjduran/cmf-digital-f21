@@ -30,3 +30,13 @@ Topics: HTML, CSS, JS, bootstrap, materialize, bulma
 * student-list-bulma - A filterable list built using vanilla JS and [bulma](https://bulma.io/) as the front-end framework. Includes images.
 * student-list-load-from-data - A filterable list built using vanilla JS and minimal styles. The data is dynamically loaded into the DOM from load-names.js. 
 
+## week 7 examples
+
+Topics: node.js, express.js, web apps, APIs, socket.io
+
+* hello-node - A basic node.js app that prints "hello world!" to the console. 
+* hello-node-server - A basic node.js web server app. Responds to request with "Hello World" in the browser at http://localhost:3000.
+* hello-node-static-server - A basic node.js web server app. Responds to request with a static web page. Loads static assets - html, css, and js. 
+* chat-example - A node.js and websocket ([socket.io](https://socket.io/)) based chat app
+* p5-websockets - A p5.js app running on node.js based web server. Uses websockets (socket.io) for realtime data streaming. 
+
