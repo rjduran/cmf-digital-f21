@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <script>
+
+      // load data from getsandbox.com API
+      let api_url = 'https://wispy-smoke-7226.getsandbox.com/users';
+
+      // send a GET request to your API
+      fetch(api_url)
+        .then(function(response) {
+          response.json().then(function(data) {
+            //console.log(data); //  raw data from API
+            console.log("success")
+            
+            // call showData() function to display user data on page
+            showData(data);
+        });
+      }).catch(function(error){
+        // error message
+        console.log("can't connect to database");        
+      });
+
+      // build the table from user data
+      function showData(data){
+        
+        // for each user loaded
+        data.forEach((user, index) => {
+                  
+          // log the data we get from a user
+          //console.log(user.username);
+          //console.log(user.realname);
+          //console.log(user.age);
+          //console.log(user.haircolor);
+          //console.log(user.gender);
+          //console.log(user.eyecolor);        
+
+          // another way to log the data
+          // loop through data with for..in loop
+          /*
+          for (const key in user) {
+            console.log(`${key}: ${user[key]}`);
+          }
+          */
+
+          // get reference to table
+          let table = document.getElementById('users');
+          //console.log(table);
+          let tbody = table.getElementsByTagName('tbody')[0];
+          //console.log(tbody);
+
+          // add tr element to tbody
+          let tr = document.createElement('tr'); // table row
+          let th = document.createElement('th'); // table row header
+          th.innerText = index+1; // give index in table
+          th.setAttribute('scope','row'); //  set attribute to match bootstrap
+          tr.appendChild(th); // add th to tr
+          
+          // for each user, create td element and append to tr
+          for (const key in user) {
+            // create td elements
+            let td = document.createElement('td');
+            // insert data
+            td.innerText = user[key];            
+            // add to row
+            tr.appendChild(td);
+          }                
+          tbody.appendChild(tr); // add row to tbody
+
+        });
+                
+      }
+
+
+      
+
+    </script>
+
+    <title>My API</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Content here -->
+      <h1>My API</h1>
+                        
+      <table id="users" class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">username</th>
+            <th scope="col">realname</th>
+            <th scope="col">age</th>
+            <th scope="col">gender</th>
+            <th scope="col">height (cm)</th>
+            <th scope="col">eye color</th>
+            <th scope="col">hair color</th>
+          </tr>
+        </thead>
+        <tbody>                             
+        </tbody>
+      </table>
+
+    </div>       
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

@@ -32,11 +32,12 @@ Topics: HTML, CSS, JS, bootstrap, materialize, bulma
 
 ## week 7 examples
 
-Topics: node.js, express.js, web apps, APIs, socket.io
+Topics: APIs, web apps, JSON, node.js, express.js, socket.io
 
 * hello-node - A basic node.js app that prints "hello world!" to the console. 
 * hello-node-server - A basic node.js web server app. Responds to request with "Hello World" in the browser at http://localhost:3000.
 * hello-node-static-server - A basic node.js web server app. Responds to request with a static web page. Loads static assets - html, css, and js. 
 * chat-example - A node.js and websocket ([socket.io](https://socket.io/)) based chat app
 * p5-websockets - A p5.js app running on node.js based web server. Uses websockets (socket.io) for realtime data streaming. 
-
+* getsandbox-api - This example consumes an API provided by [getsandbox.com](https://getsandbox.com/) to display data in a Bootstrap table.
+* student-directory-strapi - This example consumes an Strapi based API holding CMCI Studio student data. The web app and database is deployed on [heroku](https://www.heroku.com). 

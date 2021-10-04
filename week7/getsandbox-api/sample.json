@@ -1,0 +1,18 @@
+{
+  "username":"rjduran",
+  "realname": "RJ Duran",  
+  "age":21,
+  "gender":"male",
+  "height":177.8,
+  "eyecolor":"brown",
+  "haircolor": "dark brown"  
+},
+{
+  "username":"foogoo",
+  "realname": "Foo Goo",
+  "age":100,
+  "gender":"male",
+  "height":177.8,
+  "eyecolor":"red",
+  "haircolor": "blue"
+}
